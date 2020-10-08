@@ -6,8 +6,8 @@
 #define PROJECT_NAME "Function"
 
 /* Prototypes for all the test functions */
-void test_simple(double,double,double);
-void test_compound(double,double,double);
+void test_multiplication(void);
+void test_subtraction(void);
 
 
 /* Start of the application test */
@@ -20,8 +20,8 @@ int main() {
 /* Note: Do not edit END */
 
 /* Add your test functions in this format for testing*/
-  CU_add_test(suite, "FindSimple", test_simple);
-  CU_add_test(suite, "FindCompound", test_compound);
+  CU_add_test(suite, "multiplication", test_multiplication);
+  CU_add_test(suite, "subtraction", test_subtraction);
 
 
 /* Note: Do not edit START*/
@@ -37,23 +37,23 @@ int main() {
   return 0;
 }
 /* Write all the test functions */
-void FindSimple(double,double,double) {
-  CU_ASSERT(24000.000000== FindSimple(10000,10,24));
-  CU_ASSERT(10.000000 == FindSimple(100,10,1));
-  CU_ASSERT(20.000000 == FindSimple(200,10,1));
-  CU_ASSERT(30.000000 == FindSimple(300,10,1));
-  CU_ASSERT(48000.000000 == FindSimple(20000,10,24));
+void multiplication(void) {
+  CU_ASSERT(12== multiplication(6,2));
+  CU_ASSERT(21== multiplication(7,3));
+  CU_ASSERT(75==multiplication(15,5));
+  CU_ASSERT(81 == multiplication(9,9));
+  CU_ASSERT( 20== multiplication(10,2));
 
   /* Dummy fail*/
-  CU_ASSERT(15.000000 == FindSimple(500,10,1));
+  CU_ASSERT(15 == multiplication(4,3));
 }
 
-void FindCompound(double,double,double) {
-  CU_ASSERT(98497.326758== FindCompound(10000,10,24));
-  CU_ASSERT(110.000000  == FindCompound(100,10,1));
-  CU_ASSERT(220.000000  == FindCompound(200,10,1));
-  CU_ASSERT(330.000000 == FindCompound(300,10,1));
+void subtraction(void) {
+  CU_ASSERT(5== subtraction(10,5));
+  CU_ASSERT(2  == subtraction(7,5));
+  CU_ASSERT( 1 == subtraction(3,-2));
+  CU_ASSERT(3 == subtraction(6,3));
 
   /* Dummy fail*/
-  CU_ASSERT( 440.000000== FindCompound(500,10,1));
+  CU_ASSERT( 4== subtraction(8,2));
 }
